@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<?php require_once "controllerUserData.php"; ?>
-<?php 
+<?php
+
+require_once "controllerUserData.php";
+
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
-if($email != false && $password != false){
-    $sql = "SELECT * FROM users WHERE email = '$email'";
+if ($email && $password) {
+    $sql = "SELECT * FROM users WHERE email = '{$email}'";
     $run_Sql = mysqli_query($con, $sql);
-    if($run_Sql){
+    if ($run_Sql) {
         $fetch_info = mysqli_fetch_assoc($run_Sql);
         $status = $fetch_info['status'];
         $code = $fetch_info['code'];
-        if($status == "verified"){
-            if($code != 0){
+        if ($status == "verified") {
+            if ($code !== 0) {
                 header('Location: reset-code.php');
             }
-        }else{
+        } else {
             header('Location: user-otp.php');
         }
     }
-}else{
+} else {
     header('Location: login.php');
 }
-if ($fetch_info['kyc_status'] == "completed")
-{
+if ($fetch_info['kyc_status'] == "completed") {
     header('Location: dashboard.php');
-
 }
 
 ?>
-
 
 <head>
     <meta charset="utf-8">
@@ -112,15 +111,15 @@ if ($fetch_info['kyc_status'] == "completed")
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <!-- toggle and nav items -->
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-                       
+
                         <li class="nav-item dropdown">
                         <span class="text-dark font-weight-medium mb-1" style="font-size:1.17em;"><b>
                             Welcome <?php echo $fetch_info['username'] ?> !</b></span>&nbsp;
                         <span style="color:blue"><i class="fas fa-info-circle"></i></span> KYC is not completed, <a href="kyc.php">click here to complete</a>
 
-                        
+
                         </li>
-                        
+
                     </ul>
                     <!-- Right side toggle and nav items -->
                     <ul class="navbar-nav float-right">
@@ -150,11 +149,11 @@ if ($fetch_info['kyc_status'] == "completed")
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                
+
                                 <a class="dropdown-item" href="logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
-                                  
+
                             </div>
                         </li>
                         <!-- User profile -->
@@ -163,7 +162,7 @@ if ($fetch_info['kyc_status'] == "completed")
             </nav>
         </header>
         <!-- End Topbar header -->
-        
+
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
@@ -226,14 +225,14 @@ if ($fetch_info['kyc_status'] == "completed")
             <!-- End Sidebar scroll-->
         </aside>
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        
+
 
         <!-- Page wrapper  -->
-        
+
         <div class="page-wrapper">
-          
+
             <!-- Bread crumb and right sidebar toggle -->
-            
+
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
@@ -280,10 +279,10 @@ if ($fetch_info['kyc_status'] == "completed")
             </div>
             </div>
             </div>
-              
-              
 
-           
+
+
+
             <!-- End Container fluid  -->
             <!-- footer -->
             <footer class="footer text-center text-muted">
