@@ -45,34 +45,19 @@
                         <p class="text-center">Start with WAN now, quick and easy!</p>
                         <form class="mt-4">
                             <div class="row">
-                                
-                    
-                    <?php
-                    if(count($errors) == 1){
-                        ?>
-                        <div class="alert alert-danger text-center">
-                            <?php
-                            foreach($errors as $showerror){
-                                echo $showerror;
-                            }
-                            ?>
-                        </div>
-                        <?php
-                    }
-                    else if(count($errors) > 1){
-                        ?>
-                        <div class="alert alert-danger">
-                            <?php
-                            foreach($errors as $showerror){
-                                ?>
-                                <li><?php echo $showerror; ?></li>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                        <?php
-                    }
-                    ?>
+                            <?php if (count($errors) === 1): ?>
+                                <div class="alert alert-danger text-center">
+                                    <?php foreach($errors as $error): ?>
+                                        <?=$error?>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php elseif (count($errors) > 1): ?>
+                                <div class="alert alert-danger">
+                                    <?php foreach($errors as $error): ?>
+                                        <li><?=$error?></li>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                                  <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark">Username</label>
@@ -91,15 +76,15 @@
                                         <input class="form-control" type="password" name="password" placeholder="Password" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark">Password</label>
                                         <input class="form-control" type="password" name="cpassword" placeholder="Confirm password" required>
                                     </div>
                                 </div>
-                        
-                               
+
+
                                 <div class="col-lg-12 text-center mt-3">
                                     <input class="btn btn-block btn-dark" type="submit" name="signup" value="Sign Up">
                                 </div>
@@ -114,13 +99,13 @@
         </div>
         </form>
     </div>
-    
+
     <script src="assets/libs/jquery/dist/jquery.min.js "></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
-    
-    
+
+
     <script>
         $(".preloader ").fadeOut();
     </script>
