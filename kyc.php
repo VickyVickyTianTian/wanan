@@ -347,11 +347,8 @@ if ($fetch_info['kyc_status'] === "completed") {
 
         <div class="form-group">
            <label class="text-dark">Passport Photo</label>
-            <div class="input-group">
-                <div class="file-loading">
-                    <input id="input-passport-photo" name="file-upload[]" type="file" accept="image/*" multiple>
-                </div>
-
+            <div class="file-loading">
+                <input id="input-passport-photo" name="file-upload[]" type="file" accept="image/*" multiple>
             </div>
         </div>
 
@@ -532,7 +529,6 @@ if ($fetch_info['kyc_status'] === "completed") {
     <!-- End Wrapper -->
     <!-- End Wrapper -->
     <!-- All Jquery -->
-
 
     <script>
         $(document).ready(function() {
