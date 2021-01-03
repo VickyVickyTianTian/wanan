@@ -335,25 +335,6 @@ if ($fetch_info['kyc_status'] === "completed") {
                     <input id="input-passport-photo" name="input-passport-photo[]" type="file" accept="image/*" multiple>
                 </div>
 
-                <script>
-                    $(document).ready(function() {
-                        const $el1 = $("#input-passport-photo");
-                        $el1.fileinput({
-                            allowedFileExtensions: ['jpg', 'png', 'gif'],
-                            uploadUrl: "/file-upload-batch/2",
-                            uploadAsync: true,
-                            deleteUrl: "/site/file-delete",
-                            showUpload: false, // hide upload button
-                            overwriteInitial: false, // append files to initial preview
-                            minFileCount: 1,
-                            maxFileCount: 5,
-                            browseOnZoneClick: true,
-                            initialPreviewAsData: true,
-                        }).on("filebatchselected", function(event, files) {
-                            $el1.fileinput("upload");
-                        });
-                    });
-                </script>
             </div>
         </div>
 
@@ -561,6 +542,27 @@ if ($fetch_info['kyc_status'] === "completed") {
     <script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            const $passportEL = $("#input-passport-photo");
+            $passportEL.fileinput({
+                allowedFileExtensions: ['jpg', 'png', 'gif'],
+                uploadUrl: "/file-upload-batch/2",
+                uploadAsync: true,
+                deleteUrl: "/site/file-delete",
+                showUpload: false, // hide upload button
+                overwriteInitial: false, // append files to initial preview
+                minFileCount: 1,
+                maxFileCount: 5,
+                browseOnZoneClick: true,
+                initialPreviewAsData: true,
+            }).on("filebatchselected", function(event, files) {
+                $passportEL.fileinput("upload");
+            });
+        });
+    </script>
 </body>
 
 </html>
