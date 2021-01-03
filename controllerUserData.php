@@ -47,7 +47,6 @@ if (isset($_POST['signup'])) {
             $errors['db-error'] = "Failed to signup. Please contact customer service.";
         }
     }
-
 }
 //if user click verification code submit button
 if (isset($_POST['check'])) {

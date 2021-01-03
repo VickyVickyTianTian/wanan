@@ -46,20 +46,13 @@
                         <form class="mt-4">
                             <div class="row">
                                 <div class="col-lg-12">
-                    
-                    <?php
-                    if(count($errors) > 0){
-                        ?>
-                        <div class="alert alert-danger text-center">
-                            <?php
-                            foreach($errors as $showerror){
-                                echo $showerror;
-                            }
-                            ?>
-                        </div>
-                        <?php
-                    }
-                    ?>
+                                <?php if (count($errors) > 0): ?>
+                                    <div class="alert alert-danger text-center">
+                                        <?php foreach($errors as $error): ?>
+                                            <?=$error?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
                                     <div class="form-group">
                                         <label class="text-dark">Email</label>
                                         <input class="form-control" type="email" name="email" placeholder="Email Address" required value="<?php echo $email ?>">
@@ -71,12 +64,11 @@
                                         <input class="form-control" type="password" name="password" placeholder="Password" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-lg-12 text-left mt-1">
-                                    
-                    <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot password?</a></div>
+                                    <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot password?</a></div>
                                 </div>
-                               
+
                                 <div class="col-lg-12 text-center mt-3">
                                     <input class="btn btn-block btn-dark" type="submit" name="login" value="Login">
                                 </div>
@@ -91,13 +83,13 @@
         </div>
         </form>
     </div>
-    
+
     <script src="assets/libs/jquery/dist/jquery.min.js "></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
-    
-    
+
+
     <script>
         $(".preloader ").fadeOut();
     </script>
