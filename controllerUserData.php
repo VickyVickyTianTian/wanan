@@ -26,8 +26,8 @@ if (isset($_POST['signup'])) {
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(111111, 999999);
         $status = "notverified";
-        $insert_data = "INSERT INTO users (name, email, password_hash, code, status)
-                        values('$name', '$email', '$encpass', '$code', '$status')";
+        $insert_data = "INSERT INTO users (user_type, username, email, password_hash, code, status)
+                        values(1, '$name', '$email', '$encpass', '$code', '$status')";
         $data_check = mysqli_query($con, $insert_data);
         if ($data_check) {
             $subject = "WAN:Email Verification Code";
