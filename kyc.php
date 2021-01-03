@@ -349,7 +349,7 @@ if ($fetch_info['kyc_status'] === "completed") {
            <label class="text-dark">Passport Photo</label>
             <div class="input-group">
                 <div class="file-loading">
-                    <input id="input-passport-photo" name="input-passport-photo[]" type="file" accept="image/*" multiple>
+                    <input id="input-passport-photo" name="file-upload[]" type="file" accept="image/*" multiple>
                 </div>
 
             </div>
@@ -539,7 +539,7 @@ if ($fetch_info['kyc_status'] === "completed") {
             const $passportEL = $("#input-passport-photo");
             $passportEL.fileinput({
                 allowedFileExtensions: ['jpg', 'png', 'gif'],
-                uploadUrl: "/file-upload-batch/2",
+                uploadUrl: "/fileupload",
                 uploadAsync: true,
                 deleteUrl: "/site/file-delete",
                 showUpload: false, // hide upload button
