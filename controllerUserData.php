@@ -24,9 +24,9 @@ if (isset($_POST['signup'])) {
 
     if (count($errors) == 0) {
         $encpass = password_hash($password, PASSWORD_BCRYPT);
-        $code = rand(999999, 111111);
+        $code = rand(111111, 999999);
         $status = "notverified";
-        $insert_data = "INSERT INTO users (name, email, password, code, status)
+        $insert_data = "INSERT INTO users (name, email, password_hash, code, status)
                         values('$name', '$email', '$encpass', '$code', '$status')";
         $data_check = mysqli_query($con, $insert_data);
         if ($data_check) {
@@ -164,7 +164,7 @@ if (isset($_POST['change-password'])) {
         $code = 0;
         $email = $_SESSION['email']; //getting this email using session
         $encpass = password_hash($password, PASSWORD_BCRYPT);
-        $update_pass = "UPDATE users SET code = $code, password = '$encpass' WHERE email = '$email'";
+        $update_pass = "UPDATE users SET code = $code, password_hash = '$encpass' WHERE email = '$email'";
         $run_query = mysqli_query($con, $update_pass);
         if ($run_query) {
             $info = "Your password changed. Now you can login with your new password.";
