@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <?php
+
 require_once "controllerUserData.php";
-?>
-<?php
+
 $email    = $_SESSION['email'];
 $password = $_SESSION['password'];
-if ($email != false && $password != false) {
+if ($email&& $password) {
     $sql     = "SELECT * FROM users WHERE email = '$email'";
     $run_Sql = mysqli_query($con, $sql);
     if ($run_Sql) {
@@ -14,7 +14,7 @@ if ($email != false && $password != false) {
         $status     = $fetch_info['status'];
         $code       = $fetch_info['code'];
         if ($status == "verified") {
-            if ($code != 0) {
+            if ($code) {
                 header('Location: reset-code.php');
             }
         } else {
@@ -24,12 +24,10 @@ if ($email != false && $password != false) {
 } else {
     header('Location: login.php');
 }
-if ($fetch_info['kyc_status'] == "completed")
-{
+if ($fetch_info['kyc_status'] === "completed") {
     header('Location: dashboard.php');
 
 }
-
 ?>
 
 <head>
@@ -53,7 +51,31 @@ if ($fetch_info['kyc_status'] == "completed")
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
+    <!-- bootstrap 4.x is supported. You can also use the bootstrap css 3.3.x versions -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- if using RTL (Right-To-Left) orientation, load the RTL CSS file after fileinput.css by uncommenting below -->
+    <!-- link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput-rtl.min.css" media="all" rel="stylesheet" type="text/css" /-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- piexif.min.js is needed for auto orienting image files OR when restoring exif data in resized images and when you
+        wish to resize images before upload. This must be loaded before fileinput.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/plugins/piexif.min.js" type="text/javascript"></script>
+    <!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview.
+        This must be loaded before fileinput.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/plugins/sortable.min.js" type="text/javascript"></script>
+    <!-- popper.min.js below is needed if you use bootstrap 4.x. You can also use the bootstrap js
+       3.3.x versions without popper.min.js. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- bootstrap.min.js below is needed if you wish to zoom and preview file content in a detail modal
+        dialog. bootstrap 4.x is supported. You can also use the bootstrap js 3.3.x versions. -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- the main fileinput plugin file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/fileinput.min.js"></script>
+    <!-- optionally if you need a theme like font awesome theme you can include it as mentioned below -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/themes/fa/theme.js"></script>
+    <!-- optionally if you need translation for your language then include  locale file as mentioned below -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/locales/en.js"></script>
 </head>
 
 <body>
@@ -113,15 +135,9 @@ if ($fetch_info['kyc_status'] == "completed")
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <!-- toggle and nav items -->
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-                       
                         <li class="nav-item dropdown">
-                        <h3 class="text-dark font-weight-medium mb-1">Welcome <?php
-echo $fetch_info['username'];
-?> !</h3>
-
-                        
+                            <h3 class="text-dark font-weight-medium mb-1">Welcome <?=$fetch_info['username']?>!</h3>
                         </li>
-                        
                     </ul>
                     <!-- Right side toggle and nav items -->
                     <ul class="navbar-nav float-right">
@@ -136,7 +152,6 @@ echo $fetch_info['username'];
                                         <option value="2">AK</option>
                                         <option value="3">BE</option>
                                         -->
-
                                     </select>
                                 </div>
                             </a>
@@ -146,18 +161,16 @@ echo $fetch_info['username'];
                                 aria-haspopup="true" aria-expanded="false">
                                 <img src="assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
-                                <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php
-echo $fetch_info['username'];
-?></span> <i data-feather="chevron-down"
-                                        class="svg-icon"></i></span>
+                                <span class="ml-2 d-none d-lg-inline-block">
+                                    <span>Hello,</span>
+                                    <span class="text-dark"><?=$fetch_info['username'] ?></span>
+                                    <i data-feather="chevron-down" class="svg-icon"></i>
+                                </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                
-                                <a class="dropdown-item" href="logout.php"><i data-feather="power"
-                                        class="svg-icon mr-2 ml-1"></i>
-                                    Logout</a>
-                                  
+                                <a class="dropdown-item" href="logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
+                                    Logout
+                                </a>
                             </div>
                         </li>
                         <!-- User profile -->
@@ -167,7 +180,7 @@ echo $fetch_info['username'];
         </header>
 
         <!-- End Topbar header -->
-        
+
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
@@ -175,9 +188,12 @@ echo $fetch_info['username'];
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.php"
-                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="index.php" aria-expanded="false">
+                                <i data-feather="home" class="feather-icon"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">WAN Account</span></li>
 
@@ -222,8 +238,6 @@ echo $fetch_info['username'];
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="ticket.php"
                                 aria-expanded="false"><i class="fas fa-ticket-alt"></i></i><span
                                     class="hide-menu">Submit Ticket</span></a></li>
-
-
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -231,13 +245,13 @@ echo $fetch_info['username'];
         </aside>
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
 
-        
+
         <!-- Page wrapper  -->
-        
+
         <div class="page-wrapper">
-          
+
             <!-- Bread crumb and right sidebar toggle -->
-            
+
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
@@ -250,12 +264,10 @@ echo $fetch_info['username'];
                             </nav>
                         </div>
                     </div>
-                    
                 </div>
             </div>
 
             <div class="container-fluid">
-
                 <!-- Start Sales Charts Section -->
                 <div class="row">
                     <div class="col-md-12 col-lg-1"></div>
@@ -265,16 +277,12 @@ echo $fetch_info['username'];
                                 <h4 class="card-title mb-4">Complete KYC to unlock features</h4>
                                 <p>KYC verification is expected to be completed within 1 to 2 working days. Please check your status timely.</p>
                             </div>
-                            <!--
-                                Start here to fill up the template
-                            -->
 
-    <form action="kyc.php" method="POST" name="form_individual" autocomplete="">
-    <div class="col-md-12 col-lg-12">
+                        <form action="kyc.php" method="POST" name="form_individual" autocomplete="">
+                            <div class="col-md-12 col-lg-12">
                             <div class="card-body">
-
                             <ul class="nav nav-pills bg-nav-pills nav-justified mb-2">
-                                    
+
                                     <li class="nav-item">
                                         <a href="#individual" data-toggle="tab" aria-expanded="false"
                                             class="nav-link rounded-0 active">
@@ -302,15 +310,12 @@ echo $fetch_info['username'];
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="individual">
 
-
-
-    
-        <div class="col-md-12 col-lg-8"> 
+        <div class="col-md-12 col-lg-8">
             <div class="form-group">
                <label class="text-dark">Full Name (as per Passport)</label>
                <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
             </div>
-            <div class="form-group">               
+            <div class="form-group">
                <label class="text-dark">Full Name (as per IC)</label>
                <input class="form-control" type="text" name="Fullname2" placeholder="Enter Chinese Name" required >
             </div>
@@ -321,28 +326,34 @@ echo $fetch_info['username'];
             <div class="form-group">
                 <label class="text-dark">IC No.</label>
                 <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No." required>
-            </div>  
-         
+            </div>
+
         <div class="form-group">
            <label class="text-dark">Passport Photo</label>
             <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="Passport1" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                <div class="file-loading">
+                    <input id="input-passport-photo" name="input-passport-photo[]" type="file" accept="image/*" multiple>
                 </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="Passport2" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
+
+                <script>
+                    $(document).ready(function() {
+                        const $el1 = $("#input-passport-photo");
+                        $el1.fileinput({
+                            allowedFileExtensions: ['jpg', 'png', 'gif'],
+                            uploadUrl: "/file-upload-batch/2",
+                            uploadAsync: true,
+                            deleteUrl: "/site/file-delete",
+                            showUpload: false, // hide upload button
+                            overwriteInitial: false, // append files to initial preview
+                            minFileCount: 1,
+                            maxFileCount: 5,
+                            browseOnZoneClick: true,
+                            initialPreviewAsData: true,
+                        }).on("filebatchselected", function(event, files) {
+                            $el1.fileinput("upload");
+                        });
+                    });
+                </script>
             </div>
         </div>
 
@@ -379,27 +390,21 @@ echo $fetch_info['username'];
             </div>
 <br>
             <div class="col-lg-12 text-center mt-2">
-                                    <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
-                                </div>
+                <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
+            </div>
         </div>
     </form>
         </div>
-
-        
-        
-                                    </div>
-
-
-
+                    </div>
 
                                     <div class="tab-pane " id="corporate">
-                                    
-<div class="col-md-12 col-lg-8"> 
+
+<div class="col-md-12 col-lg-8">
             <div class="form-group">
                <label class="text-dark">Company Name (please provide the company for account withdrawal)</label>
                <input class="form-control" type="text" name="Fullname1" placeholder="Enter company Chinese Name (if any)" required >
             </div>
-            <div class="form-group">               
+            <div class="form-group">
                <label class="text-dark">Company Name (English)</label>
                <input class="form-control" type="text" name="Fullname2" placeholder="Enter company English Name" required>
             </div>
@@ -422,12 +427,12 @@ echo $fetch_info['username'];
             <hr>
             <br>
             <div class="form-group">
-                
+
 
                <label class="text-dark">Director's Full Name (as per Passport)</label>
                <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
             </div>
-            <div class="form-group">               
+            <div class="form-group">
                <label class="text-dark">Director's Full Name (as per IC)</label>
                <input class="form-control" type="text" name="Fullname2" placeholder="Enter Chinese Name" required >
             </div>
@@ -438,8 +443,8 @@ echo $fetch_info['username'];
             <div class="form-group">
                 <label class="text-dark">Director's IC No.</label>
                 <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No." required>
-            </div>  
-         
+            </div>
+
         <div class="form-group">
            <label class="text-dark">Director's Passport Photo</label>
             <div class="input-group">
@@ -504,39 +509,23 @@ echo $fetch_info['username'];
         </div>
     </form>
         </div>
-
-        
-        
                                     </div>
                                     </div>
-                                 
                                 </div>
-
                                 </div>
-
                                 </div>
-
                             <!-- forms--->
-                 
-
-
-    
-           
                         </form>
-
-
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-1"></div>
                 </div>
             </div>
-              
+
             </div>
             </div>
-              
+
               </div>
-            
-           
             <!-- End Container fluid  -->
             <!-- footer -->
             <footer class="footer text-center text-muted">

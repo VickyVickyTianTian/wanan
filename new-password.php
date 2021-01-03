@@ -4,7 +4,7 @@ require_once "controllerUserData.php";
 
 $email = $_SESSION['email'];
 
-if($email === false){
+if ($email === false) {
   header('Location: login.php');
 }
 ?>
