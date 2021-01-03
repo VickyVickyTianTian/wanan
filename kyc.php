@@ -539,9 +539,9 @@ if ($fetch_info['kyc_status'] === "completed") {
             const $passportEL = $("#input-passport-photo");
             $passportEL.fileinput({
                 allowedFileExtensions: ['jpg', 'png', 'gif'],
-                uploadUrl: "/fileupload",
+                uploadUrl: "/fileupload.php",
                 uploadAsync: true,
-                deleteUrl: "/site/file-delete",
+                deleteUrl: "/filedelete.php",
                 showUpload: false, // hide upload button
                 overwriteInitial: false, // append files to initial preview
                 minFileCount: 1,
