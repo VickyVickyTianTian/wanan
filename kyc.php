@@ -52,6 +52,7 @@ if ($fetch_info['kyc_status'] === "completed") {
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <!-- bootstrap 4.x is supported. You can also use the bootstrap css 3.3.x versions -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
@@ -74,8 +75,24 @@ if ($fetch_info['kyc_status'] === "completed") {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/fileinput.min.js"></script>
     <!-- optionally if you need a theme like font awesome theme you can include it as mentioned below -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/themes/fa/theme.js"></script>
-    <!-- optionally if you need translation for your language then include  locale file as mentioned below -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/locales/en.js"></script>
+
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <!-- apps -->
+    <script src="dist/js/app-style-switcher.js"></script>
+    <script src="dist/js/feather.min.js"></script>
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="assets/extra-libs/c3/d3.min.js"></script>
+    <script src="assets/extra-libs/c3/c3.min.js"></script>
+    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
+
 </head>
 
 <body>
@@ -480,9 +497,6 @@ if ($fetch_info['kyc_status'] === "completed") {
                      <button class="btn btn-outline-secondary" type="button">Upload</button>
                 </div>
             </div>
-
-
-
 <br>
             <div class="col-lg-12 text-center mt-2">
                                     <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
@@ -502,10 +516,8 @@ if ($fetch_info['kyc_status'] === "completed") {
                     <div class="col-md-12 col-lg-1"></div>
                 </div>
             </div>
-
             </div>
             </div>
-
               </div>
             <!-- End Container fluid  -->
             <!-- footer -->
@@ -518,30 +530,8 @@ if ($fetch_info['kyc_status'] === "completed") {
         <!-- End Page wrapper  -->
     </div>
     <!-- End Wrapper -->
-
     <!-- End Wrapper -->
-
     <!-- All Jquery -->
-
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script src="dist/js/app-style-switcher.js"></script>
-    <script src="dist/js/feather.min.js"></script>
-    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <script src="assets/extra-libs/c3/d3.min.js"></script>
-    <script src="assets/extra-libs/c3/c3.min.js"></script>
-    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
 
 
     <script>
