@@ -1,7 +1,10 @@
-<?php require_once "controllerUserData.php"; ?>
-<?php 
+<?php
+
+require_once "controllerUserData.php";
+
 $email = $_SESSION['email'];
-if($email == false){
+
+if($email === false){
   header('Location: login.php');
 }
 ?>
@@ -52,9 +55,9 @@ if($email == false){
                     <p class="text-center">Reset new password to access your account.</p>
                         <form class="mt-4">
                             <div class="row">
-			
-                            
-                    <?php 
+
+
+                    <?php
                     if(isset($_SESSION['info'])){
                         ?>
                         <div class="alert alert-success text-center">
@@ -76,7 +79,7 @@ if($email == false){
                         <?php
                     }
                     ?>
-                   
+
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -91,7 +94,7 @@ if($email == false){
                                         <input class="form-control" type="password" name="cpassword" placeholder="Confirm your password" required>
                                     </div>
                                 </div>
-                               
+
                                 <div class="col-lg-12 text-center mt-3">
                                     <input class="btn btn-block btn-dark" type="submit" name="change-password" value="Change">
                                 </div>
@@ -104,13 +107,13 @@ if($email == false){
         </div>
         </form>
     </div>
-    
+
     <script src="assets/libs/jquery/dist/jquery.min.js "></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
-    
-    
+
+
     <script>
         $(".preloader ").fadeOut();
     </script>
