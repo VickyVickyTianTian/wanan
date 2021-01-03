@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<?php
-require_once "controllerUserData.php";
-?>
-<?php
-$email    = $_SESSION['email'];
+<?php require_once "controllerUserData.php"; ?>
+<?php 
+$email = $_SESSION['email'];
 $password = $_SESSION['password'];
-if ($email != false && $password != false) {
-    $sql     = "SELECT * FROM users WHERE email = '$email'";
+if($email != false && $password != false){
+    $sql = "SELECT * FROM users WHERE email = '$email'";
     $run_Sql = mysqli_query($con, $sql);
-    if ($run_Sql) {
+    if($run_Sql){
         $fetch_info = mysqli_fetch_assoc($run_Sql);
-        $status     = $fetch_info['status'];
-        $code       = $fetch_info['code'];
-        if ($status == "verified") {
-            if ($code != 0) {
+        $status = $fetch_info['status'];
+        $code = $fetch_info['code'];
+        if($status == "verified"){
+            if($code != 0){
                 header('Location: reset-code.php');
             }
-        } else {
+        }else{
             header('Location: user-otp.php');
         }
     }
-} else {
+}else{
     header('Location: login.php');
 }
-if ($fetch_info['kyc_status'] == "completed")
+if ($fetch_info['kyc_status'] != "completed")
 {
-    header('Location: dashboard.php');
+    header('Location: index.php');
 
 }
 
@@ -115,9 +113,7 @@ if ($fetch_info['kyc_status'] == "completed")
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                        
                         <li class="nav-item dropdown">
-                        <h3 class="text-dark font-weight-medium mb-1">Welcome <?php
-echo $fetch_info['username'];
-?> !</h3>
+                        <h3 class="text-dark font-weight-medium mb-1">Welcome <?php echo $fetch_info['username'] ?> !</h3>
 
                         
                         </li>
@@ -147,9 +143,7 @@ echo $fetch_info['username'];
                                 <img src="assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php
-echo $fetch_info['username'];
-?></span> <i data-feather="chevron-down"
+                                        class="text-dark"><?php echo $fetch_info['username'] ?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -165,7 +159,6 @@ echo $fetch_info['username'];
                 </div>
             </nav>
         </header>
-
         <!-- End Topbar header -->
         
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -175,7 +168,7 @@ echo $fetch_info['username'];
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.php"
+                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="dashboard.php"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="list-divider"></li>
@@ -230,8 +223,8 @@ echo $fetch_info['username'];
             <!-- End Sidebar scroll-->
         </aside>
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-
         
+
         <!-- Page wrapper  -->
         
         <div class="page-wrapper">
@@ -244,298 +237,222 @@ echo $fetch_info['username'];
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><h4><a href="index.html">KYC Completion</a></h4>
+                                    <li class="breadcrumb-item"><h4><a href="dashboard.php">Dashboard</a></h4>
                                     </li>
+                                    
                                 </ol>
                             </nav>
                         </div>
                     </div>
-                    
+                    <div class="col-5 align-self-center">
+                        <div class="customize-input float-right">
+                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
+                                <option selected>This Month</option>
+                                <!--
+                                <option value="1">July 19</option>
+                                <option value="2">Jun 19</option>
+                                -->
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="container-fluid">
-
-                <!-- Start Sales Charts Section -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-1"></div>
-                    <div class="col-md-12 col-lg-10">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Complete KYC to unlock features</h4>
-                                <p>KYC verification is expected to be completed within 1 to 2 working days. Please check your status timely.</p>
-                            </div>
-                            <!--
-                                Start here to fill up the template
-                            -->
-
-    <form action="kyc.php" method="POST" name="form_individual" autocomplete="">
-    <div class="col-md-12 col-lg-12">
-                            <div class="card-body">
-
-                            <ul class="nav nav-pills bg-nav-pills nav-justified mb-2">
-                                    
-                                    <li class="nav-item">
-                                        <a href="#individual" data-toggle="tab" aria-expanded="false"
-                                            class="nav-link rounded-0 active">
-                                            <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">Individual</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#corporate" data-toggle="tab" aria-expanded="true"
-                                            class="nav-link rounded-0">
-                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">Corporate</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" data-toggle="tab" aria-expanded="true"
-                                            class="nav-link rounded-0">
-                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-<br>
-
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="individual">
-
-
-
-    
-        <div class="col-md-12 col-lg-8"> 
-            <div class="form-group">
-               <label class="text-dark">Full Name (as per Passport)</label>
-               <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
-            </div>
-            <div class="form-group">               
-               <label class="text-dark">Full Name (as per IC)</label>
-               <input class="form-control" type="text" name="Fullname2" placeholder="Enter Chinese Name" required >
-            </div>
-            <div class="form-group">
-                <label class="text-dark">Passport No.</label>
-                <input class="form-control" type="text" name="Fullname1" placeholder="Enter Passport No." required>
-            </div>
-            <div class="form-group">
-                <label class="text-dark">IC No.</label>
-                <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No." required>
-            </div>  
-         
-        <div class="form-group">
-           <label class="text-dark">Passport Photo</label>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="Passport1" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="Passport2" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-           <label class="text-dark">IC Photo</label>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC1" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC2" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC3" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-<br>
-            <div class="col-lg-12 text-center mt-2">
-                                    <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
-                                </div>
-        </div>
-    </form>
-        </div>
-
-        
-        
-                                    </div>
-
-
-
-
-                                    <div class="tab-pane " id="corporate">
-                                    
-<div class="col-md-12 col-lg-8"> 
-            <div class="form-group">
-               <label class="text-dark">Company Name (please provide the company for account withdrawal)</label>
-               <input class="form-control" type="text" name="Fullname1" placeholder="Enter company Chinese Name (if any)" required >
-            </div>
-            <div class="form-group">               
-               <label class="text-dark">Company Name (English)</label>
-               <input class="form-control" type="text" name="Fullname2" placeholder="Enter company English Name" required>
-            </div>
-            <div class="form-group">
-                <label class="text-dark">Company Registration No.</label>
-                <input class="form-control" type="text" name="Fullname1" placeholder="Enter company registration number " required>
-            </div>
-            <div class="form-group">
-           <label class="text-dark">Company Certificate</label>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="CompanyCertificate" id="inputGroupFile01">
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div class="form-group">
+              
+                <!-- Start First Cards -->
                 
-
-               <label class="text-dark">Director's Full Name (as per Passport)</label>
-               <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
-            </div>
-            <div class="form-group">               
-               <label class="text-dark">Director's Full Name (as per IC)</label>
-               <input class="form-control" type="text" name="Fullname2" placeholder="Enter Chinese Name" required >
-            </div>
-            <div class="form-group">
-                <label class="text-dark">Director's Passport No.</label>
-                <input class="form-control" type="text" name="Fullname1" placeholder="Enter Passport No." required>
-            </div>
-            <div class="form-group">
-                <label class="text-dark">Director's IC No.</label>
-                <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No." required>
-            </div>  
-         
-        <div class="form-group">
-           <label class="text-dark">Director's Passport Photo</label>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="Passport1" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="Passport2" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-           <label class="text-dark">Director's IC Photo</label>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC1" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC2" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC3" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-
-
-
-<br>
-            <div class="col-lg-12 text-center mt-2">
-                                    <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
-                                </div>
-        </div>
-    </form>
-        </div>
-
-        
-        
+                <div class="card-group">
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">5</h2>
+                                        <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
                                     </div>
-                                    </div>
-                                 
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Accounts</h6>
                                 </div>
-
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
                                 </div>
-
-                                </div>
-
-                            <!-- forms--->
-                 
-
-
-    
-           
-                        </form>
-
-
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-1"></div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">3</h2>
+                                        <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+10.33%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Accounts</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">5</h2>
+              
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Accounts</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
+                                            class="set-doller">$</sup>18</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Accounts</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <br>
+                
+                <!-- End First Cards -->
+                
+                <!-- Start Sales Charts Section -->
+                <div class="row">
+                <div class="col-md-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Accounts by Location</h4>
+                                <div class="" style="height:180px">
+                                    <div id="visitbylocate" style="height:100%"></div>
+                                </div>
+                                <div class="row mb-3 align-items-center mt-1 mt-5">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Singapore</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">28</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 align-items-center">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Malaysia</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 74%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">21</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 align-items-center">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Thailand</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-cyan" role="progressbar" style="width: 60%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">18</span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Phillipines</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <div class="col-md-12 col-lg-8">
+                    <div class="card">
+                       <div class="card-body">
+                       <h4 class="card-title mb-4">Revenue Details</h4>
+                       <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="bg-primary text-white">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Country</th>
+                                                <th>Account No.</th>
+                                                <th>Cum. Amount</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Singapore</td>
+                                                <td>212xxx3133</td>
+                                                <td>$1,895.23</td>
+                                                <td>$421.54</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Malaysia</td>
+                                                <td>212xxx3142</td>
+                                                <td>$391,212.00</td>
+                                                <td>$121,212.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Thailand</td>
+                                                <td>212xxx5323</td>
+                                                <td>$391,212.00</td>
+                                                <td>$121,212.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                       </div>
+                    </div>
+                </div>
+                </div>
+            
+              
                 </div>
             </div>
               
-            </div>
-            </div>
-              
-              </div>
-            
+
            
             <!-- End Container fluid  -->
             <!-- footer -->

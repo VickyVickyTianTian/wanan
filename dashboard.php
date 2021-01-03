@@ -22,6 +22,12 @@ if($email != false && $password != false){
 }else{
     header('Location: login.php');
 }
+if ($fetch_info['kyc_status'] != "completed")
+{
+    header('Location: index.php');
+
+}
+
 ?>
 
 <head>
@@ -162,7 +168,7 @@ if($email != false && $password != false){
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.php"
+                    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="dashboard.php"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu">Dashboard</span></a></li>
                         <li class="list-divider"></li>
@@ -231,7 +237,7 @@ if($email != false && $password != false){
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><h4><a href="index.html">Dashboard</a></h4>
+                                    <li class="breadcrumb-item"><h4><a href="dashboard.php">Dashboard</a></h4>
                                     </li>
                                     
                                 </ol>

@@ -84,7 +84,7 @@ if ($fetch_info['kyc_status'] == "completed")
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="index.php">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="assets/images/logo-icon3.gif" alt="homepage" class="dark-logo" />
