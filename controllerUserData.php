@@ -22,7 +22,7 @@ if (isset($_POST['signup'])) {
         $errors['email'] = "Email that you have entered is already exist!";
     }
 
-    if (count($errors) == 0) {
+    if (count($errors) === 0) {
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(111111, 999999);
         $status = "notverified";
