@@ -11,7 +11,7 @@ if ($email && $password) {
         $fetch_info = mysqli_fetch_assoc($run_Sql);
         $status = $fetch_info['status'];
         $code = $fetch_info['code'];
-        if($status == "verified"){
+        if($status === "verified"){
             if ($code){
                 header('Location: reset-code.php');
             }
