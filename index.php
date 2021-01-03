@@ -14,7 +14,7 @@ if ($email && $password) {
         $status = $fetch_info['status'];
         $code = $fetch_info['code'];
         if ($status == "verified") {
-            if ($code !== 0) {
+            if ($code) {
                 header('Location: reset-code.php');
             }
         } else {
