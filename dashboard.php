@@ -22,14 +22,7 @@ if($email != false && $password != false){
 }else{
     header('Location: login.php');
 }
-if ($fetch_info['kyc_status'] == "completed")
-{
-    header('Location: dashboard.php');
-
-}
-
 ?>
-
 
 <head>
     <meta charset="utf-8">
@@ -84,7 +77,7 @@ if ($fetch_info['kyc_status'] == "completed")
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="index.php">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="assets/images/logo-icon3.gif" alt="homepage" class="dark-logo" />
@@ -114,9 +107,7 @@ if ($fetch_info['kyc_status'] == "completed")
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                        
                         <li class="nav-item dropdown">
-                        <span class="text-dark font-weight-medium mb-1" style="font-size:1.17em;"><b>
-                            Welcome <?php echo $fetch_info['username'] ?> !</b></span>&nbsp;
-                        <span style="color:blue"><i class="fas fa-info-circle"></i></span> KYC is not completed, <a href="kyc.php">click here to complete</a>
+                        <h3 class="text-dark font-weight-medium mb-1">Welcome <?php echo $fetch_info['username'] ?> !</h3>
 
                         
                         </li>
@@ -240,47 +231,220 @@ if ($fetch_info['kyc_status'] == "completed")
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><h4>Incomplete KYC</h4>
+                                    <li class="breadcrumb-item"><h4><a href="index.html">Dashboard</a></h4>
                                     </li>
+                                    
                                 </ol>
                             </nav>
+                        </div>
+                    </div>
+                    <div class="col-5 align-self-center">
+                        <div class="customize-input float-right">
+                            <select class="custom-select custom-select-set form-control bg-white border-0 custom-shadow custom-radius">
+                                <option selected>This Month</option>
+                                <!--
+                                <option value="1">July 19</option>
+                                <option value="2">Jun 19</option>
+                                -->
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="container-fluid">
-
-                <!-- Start Sales Charts Section -->
-                <div class="row">
-                    <div class="col-md-12 col-lg-1"></div>
-                    <div class="col-md-12 col-lg-10">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title"></h4>
-                            </div><br><br><br><br><br>
-                            <!--
-                                Start here to fill up the template
-                            -->
-                            <span align="center">
-                                <span class="mb-0 font-18 text-dark font-weight-medium">Please complete your KYC information to unlock the features.</span>
-                            <br><br><br><br>
-                            <div class="col-lg-12 text-center mt-4">
-                                    <div class="link login-link text-center"><a href="kyc.php" >Complete KYC</a>
+              
+                <!-- Start First Cards -->
+                
+                <div class="card-group">
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">10</h2>
+                                        <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+18.33%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Inward Transactions</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                </div>
                             </div>
-                            </div>
-    </span>
-                            <br><br><br><br><br><br><br><br><br>
-
-                        </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-1"></div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">$2,830.10</h2>
+                                        <span
+                                            class="badge bg-primary font-12 text-white font-weight-medium badge-pill ml-2 d-lg-block d-md-none">+10.33%</span>
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Revenue of this Month</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="user-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-right">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <div class="d-inline-flex align-items-center">
+                                        <h2 class="text-dark mb-1 font-weight-medium">5</h2>
+              
+                                    </div>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Outard Transactions</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="file-plus"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><sup
+                                            class="set-doller">$</sup>18,000</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Withdrawals of this month</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="globe"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <br>
+                
+                <!-- End First Cards -->
+                
+                <!-- Start Sales Charts Section -->
+                <div class="row">
+                <div class="col-md-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Revenue by Location</h4>
+                                <div class="" style="height:180px">
+                                    <div id="visitbylocate" style="height:100%"></div>
+                                </div>
+                                <div class="row mb-3 align-items-center mt-1 mt-5">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Singapore</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">28%</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 align-items-center">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Malaysia</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 74%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">21%</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 align-items-center">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Thailand</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-cyan" role="progressbar" style="width: 60%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">18%</span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-4 text-right">
+                                        <span class="text-muted font-14">Phillipines</span>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <span class="mb-0 font-14 text-dark font-weight-medium">12%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <div class="col-md-12 col-lg-8">
+                    <div class="card">
+                       <div class="card-body">
+                       <h4 class="card-title mb-4">Revenue Details</h4>
+                       <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="bg-primary text-white">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Country</th>
+                                                <th>Account No.</th>
+                                                <th>Cum. Amount</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Singapore</td>
+                                                <td>212xxx3133</td>
+                                                <td>$1,895.23</td>
+                                                <td>$421.54</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Malaysia</td>
+                                                <td>212xxx3142</td>
+                                                <td>$391,212.00</td>
+                                                <td>$121,212.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Thailand</td>
+                                                <td>212xxx5323</td>
+                                                <td>$391,212.00</td>
+                                                <td>$121,212.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                       </div>
+                    </div>
+                </div>
+                </div>
+            
+              
                 </div>
             </div>
-            </div>
-            </div>
-              
               
 
            

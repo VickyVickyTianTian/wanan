@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<?php require_once "controllerUserData.php"; ?>
-<?php 
-$email = $_SESSION['email'];
+<?php
+require_once "controllerUserData.php";
+?>
+<?php
+$email    = $_SESSION['email'];
 $password = $_SESSION['password'];
-if($email != false && $password != false){
-    $sql = "SELECT * FROM users WHERE email = '$email'";
+if ($email != false && $password != false) {
+    $sql     = "SELECT * FROM users WHERE email = '$email'";
     $run_Sql = mysqli_query($con, $sql);
-    if($run_Sql){
+    if ($run_Sql) {
         $fetch_info = mysqli_fetch_assoc($run_Sql);
-        $status = $fetch_info['status'];
-        $code = $fetch_info['code'];
-        if($status == "verified"){
-            if($code != 0){
+        $status     = $fetch_info['status'];
+        $code       = $fetch_info['code'];
+        if ($status == "verified") {
+            if ($code != 0) {
                 header('Location: reset-code.php');
             }
-        }else{
+        } else {
             header('Location: user-otp.php');
         }
     }
-}else{
+} else {
     header('Location: login.php');
 }
-if ($fetch_info['kyc_status'] == "completed")
-{
-    header('Location: dashboard.php');
-
-}
-
 ?>
-
 
 <head>
     <meta charset="utf-8">
@@ -114,9 +109,9 @@ if ($fetch_info['kyc_status'] == "completed")
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                        
                         <li class="nav-item dropdown">
-                        <span class="text-dark font-weight-medium mb-1" style="font-size:1.17em;"><b>
-                            Welcome <?php echo $fetch_info['username'] ?> !</b></span>&nbsp;
-                        <span style="color:blue"><i class="fas fa-info-circle"></i></span> KYC is not completed, <a href="kyc.php">click here to complete</a>
+                        <h3 class="text-dark font-weight-medium mb-1">Welcome <?php
+echo $fetch_info['username'];
+?> !</h3>
 
                         
                         </li>
@@ -146,7 +141,9 @@ if ($fetch_info['kyc_status'] == "completed")
                                 <img src="assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php echo $fetch_info['username'] ?></span> <i data-feather="chevron-down"
+                                        class="text-dark"><?php
+echo $fetch_info['username'];
+?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -162,6 +159,7 @@ if ($fetch_info['kyc_status'] == "completed")
                 </div>
             </nav>
         </header>
+
         <!-- End Topbar header -->
         
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -226,8 +224,8 @@ if ($fetch_info['kyc_status'] == "completed")
             <!-- End Sidebar scroll-->
         </aside>
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        
 
+        
         <!-- Page wrapper  -->
         
         <div class="page-wrapper">
@@ -240,12 +238,13 @@ if ($fetch_info['kyc_status'] == "completed")
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><h4>Incomplete KYC</h4>
+                                    <li class="breadcrumb-item"><h4><a href="index.html">KYC Completion</a></h4>
                                     </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 
@@ -257,32 +256,280 @@ if ($fetch_info['kyc_status'] == "completed")
                     <div class="col-md-12 col-lg-10">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title"></h4>
-                            </div><br><br><br><br><br>
+                                <h4 class="card-title mb-4">Complete KYC to unlock features</h4>
+                                <p>KYC verification is expected to be completed within 1 to 2 working days. Please check your status timely.</p>
+                            </div>
                             <!--
                                 Start here to fill up the template
                             -->
-                            <span align="center">
-                                <span class="mb-0 font-18 text-dark font-weight-medium">Please complete your KYC information to unlock the features.</span>
-                            <br><br><br><br>
-                            <div class="col-lg-12 text-center mt-4">
-                                    <div class="link login-link text-center"><a href="kyc.php" >Complete KYC</a>
-                            </div>
-                            </div>
-    </span>
-                            <br><br><br><br><br><br><br><br><br>
 
-                        </div>
+    <form action="kyc.php" method="POST" name="form_individual" autocomplete="">
+    <div class="col-md-12 col-lg-12">
+                            <div class="card-body">
+
+                            <ul class="nav nav-pills bg-nav-pills nav-justified mb-2">
+                                    
+                                    <li class="nav-item">
+                                        <a href="#individual" data-toggle="tab" aria-expanded="false"
+                                            class="nav-link rounded-0 active">
+                                            <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">Individual</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#corporate" data-toggle="tab" aria-expanded="true"
+                                            class="nav-link rounded-0">
+                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block">Corporate</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" data-toggle="tab" aria-expanded="true"
+                                            class="nav-link rounded-0">
+                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                            <span class="d-none d-lg-block"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+<br>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="individual">
+
+
+
+    
+        <div class="col-md-12 col-lg-8"> 
+            <div class="form-group">
+               <label class="text-dark">Full Name (as per Passport)</label>
+               <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
+            </div>
+            <div class="form-group">               
+               <label class="text-dark">Full Name (as per IC)</label>
+               <input class="form-control" type="text" name="Fullname2" placeholder="Enter Chinese Name" required >
+            </div>
+            <div class="form-group">
+                <label class="text-dark">Passport No.</label>
+                <input class="form-control" type="text" name="Fullname1" placeholder="Enter Passport No." required>
+            </div>
+            <div class="form-group">
+                <label class="text-dark">IC No.</label>
+                <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No." required>
+            </div>  
+         
+        <div class="form-group">
+           <label class="text-dark">Passport Photo</label>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="Passport1" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="Passport2" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div  class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+           <label class="text-dark">IC Photo</label>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="IC1" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="IC2" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div  class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="IC3" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div  class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+<br>
+            <div class="col-lg-12 text-center mt-2">
+                                    <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
+                                </div>
+        </div>
+    </form>
+        </div>
+
+        
+        
+                                    </div>
+
+
+
+
+                                    <div class="tab-pane " id="corporate">
+                                    
+<div class="col-md-12 col-lg-8"> 
+            <div class="form-group">
+               <label class="text-dark">Company Name (please provide the company for account withdrawal)</label>
+               <input class="form-control" type="text" name="Fullname1" placeholder="Enter company Chinese Name (if any)" required >
+            </div>
+            <div class="form-group">               
+               <label class="text-dark">Company Name (English)</label>
+               <input class="form-control" type="text" name="Fullname2" placeholder="Enter company English Name" required>
+            </div>
+            <div class="form-group">
+                <label class="text-dark">Company Registration No.</label>
+                <input class="form-control" type="text" name="Fullname1" placeholder="Enter company registration number " required>
+            </div>
+            <div class="form-group">
+           <label class="text-dark">Company Certificate</label>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="CompanyCertificate" id="inputGroupFile01">
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="form-group">
+                
+
+               <label class="text-dark">Director's Full Name (as per Passport)</label>
+               <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
+            </div>
+            <div class="form-group">               
+               <label class="text-dark">Director's Full Name (as per IC)</label>
+               <input class="form-control" type="text" name="Fullname2" placeholder="Enter Chinese Name" required >
+            </div>
+            <div class="form-group">
+                <label class="text-dark">Director's Passport No.</label>
+                <input class="form-control" type="text" name="Fullname1" placeholder="Enter Passport No." required>
+            </div>
+            <div class="form-group">
+                <label class="text-dark">Director's IC No.</label>
+                <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No." required>
+            </div>  
+         
+        <div class="form-group">
+           <label class="text-dark">Director's Passport Photo</label>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="Passport1" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="Passport2" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div  class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+           <label class="text-dark">Director's IC Photo</label>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="IC1" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="IC2" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div  class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+            <br>
+            <div class="input-group">
+                <div class="custom-file">
+                     <input type="file" class="custom-file-input" name="IC3" id="inputGroupFile01" required>
+                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
+                </div>&nbsp&nbsp
+                <div  class="input-group-append">
+                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                </div>
+            </div>
+
+
+
+<br>
+            <div class="col-lg-12 text-center mt-2">
+                                    <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
+                                </div>
+        </div>
+    </form>
+        </div>
+
+        
+        
+                                    </div>
+                                    </div>
+                                 
+                                </div>
+
+                                </div>
+
+                                </div>
+
+                            <!-- forms--->
+                 
+
+
+    
+           
+                        </form>
+
+
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-1"></div>
                 </div>
             </div>
+              
             </div>
             </div>
               
-              
-
+              </div>
+            
            
             <!-- End Container fluid  -->
             <!-- footer -->
