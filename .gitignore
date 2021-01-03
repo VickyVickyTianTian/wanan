@@ -3,3 +3,7 @@
 connection.php
 
 error_log
+
+.env
+
+vendor
