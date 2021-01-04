@@ -6,7 +6,7 @@ require_once "controllerUserData.php";
 
 $email    = $_SESSION['email'];
 $password = $_SESSION['password'];
-if ($email&& $password) {
+if ($email && $password) {
     $sql     = "SELECT * FROM users WHERE email = '$email'";
     $run_Sql = mysqli_query($con, $sql);
     if ($run_Sql) {
