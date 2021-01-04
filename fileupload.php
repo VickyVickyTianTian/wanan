@@ -18,7 +18,7 @@ function upload()
         return [];
     }
 
-    $baseURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . getenv('BASE_DOMAIN');
+    $baseURL = getenv('BASE_DOMAIN');
 
     $total = count($_FILES[$input]['name']);
 
@@ -35,8 +35,8 @@ function upload()
 
         // only jpg, jpeg, png, pdf files are allowed to upload
         $ext = pathinfo($oldFileName, PATHINFO_EXTENSION);
-        if (!in_array($ext, ['jpg', 'jpeg', 'png', 'pdf'])) {
-            return ['error' => 'Please upload .jpg, .jpeg, .png, .pdf files.'];
+        if (!in_array($ext, ['jpg', 'jpeg', 'png', 'pdf', 'gif'])) {
+            return ['error' => 'Please upload .jpg, .jpeg, .png, .pdf, .gif files.'];
         }
 
         // generate new fileName
