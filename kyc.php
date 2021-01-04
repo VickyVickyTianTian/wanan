@@ -363,8 +363,7 @@ if ($fetch_info['kyc_status'] === "completed") {
                     </div>
 
                                     <div class="tab-pane " id="corporate">
-
-<div class="col-md-12 col-lg-9">
+                                        <div class="col-md-12 col-lg-9">
             <div class="form-group">
                <label class="text-dark">Company Name (please provide the company for account withdrawal)</label>
                <input class="form-control" type="text" name="Fullname1" placeholder="Enter company Chinese Name (if any)" required >
@@ -534,7 +533,7 @@ if ($fetch_info['kyc_status'] === "completed") {
                 browseOnZoneClick: true,
                 initialPreviewAsData: true,
             }).on("filebatchselected", function(event, files) {
-                $passportEL.fileinput("upload");
+                $ICEL.fileinput("upload");
             });
         });
     </script>

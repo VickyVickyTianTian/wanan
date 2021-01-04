@@ -10,7 +10,7 @@ $preview = $config = $errors = [];
 
 if (isset($_FILES['passport-photo'])) {
     $input = 'passport-photo';
-} elseif ($_FILES['IC-photo']) {
+} elseif (isset($_FILES['IC-photo'])) {
     $input = 'IC-photo';
 } else {
     exit(json_encode([]));
