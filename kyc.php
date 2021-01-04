@@ -536,6 +536,7 @@ if ($fetch_info['kyc_status'] === "completed") {
             const baseURL = "<?=getenv('BASE_DOMAIN')?>"
             const $passportEL = $("#input-passport-photo");
             $passportEL.fileinput({
+                theme: 'fa',
                 allowedFileExtensions: ['jpg', 'png', 'gif'],
                 uploadUrl: baseURL + "/fileupload.php",
                 uploadAsync: true,
