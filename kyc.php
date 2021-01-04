@@ -539,6 +539,7 @@ if ($fetch_info['kyc_status'] === "completed") {
                 allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
                 uploadUrl: baseURL + "/fileupload.php",
                 uploadAsync: true,
+                deleteUrl: baseURL + "/filedelete.php",
                 showUpload: false, // hide upload button
                 overwriteInitial: false, // append files to initial preview
                 minFileCount: 1,
