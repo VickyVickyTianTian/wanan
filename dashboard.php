@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<?php require_once "controllerUserData.php"; ?>
-<?php 
+<?php
+
+require_once "controllerUserData.php";
+
 $email = $_SESSION['email'];
+
 $password = $_SESSION['password'];
-if($email != false && $password != false){
+
+if ($email && $password) {
     $sql = "SELECT * FROM users WHERE email = '$email'";
     $run_Sql = mysqli_query($con, $sql);
     if($run_Sql){
         $fetch_info = mysqli_fetch_assoc($run_Sql);
         $status = $fetch_info['status'];
         $code = $fetch_info['code'];
-        if($status == "verified"){
-            if($code != 0){
+        if($status === "verified"){
+            if ($code) {
                 header('Location: reset-code.php');
             }
         }else{
@@ -22,12 +26,9 @@ if($email != false && $password != false){
 }else{
     header('Location: login.php');
 }
-if ($fetch_info['kyc_status'] != "completed")
-{
+if ($fetch_info['kyc_status'] !== "completed") {
     header('Location: index.php');
-
 }
-
 ?>
 
 <head>
@@ -111,13 +112,13 @@ if ($fetch_info['kyc_status'] != "completed")
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <!-- toggle and nav items -->
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-                       
+
                         <li class="nav-item dropdown">
                         <h3 class="text-dark font-weight-medium mb-1">Welcome <?php echo $fetch_info['username'] ?> !</h3>
 
-                        
+
                         </li>
-                        
+
                     </ul>
                     <!-- Right side toggle and nav items -->
                     <ul class="navbar-nav float-right">
@@ -147,11 +148,11 @@ if ($fetch_info['kyc_status'] != "completed")
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                
+
                                 <a class="dropdown-item" href="logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
-                                  
+
                             </div>
                         </li>
                         <!-- User profile -->
@@ -160,7 +161,7 @@ if ($fetch_info['kyc_status'] != "completed")
             </nav>
         </header>
         <!-- End Topbar header -->
-        
+
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
@@ -223,14 +224,14 @@ if ($fetch_info['kyc_status'] != "completed")
             <!-- End Sidebar scroll-->
         </aside>
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        
+
 
         <!-- Page wrapper  -->
-        
+
         <div class="page-wrapper">
-          
+
             <!-- Bread crumb and right sidebar toggle -->
-            
+
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
@@ -239,7 +240,7 @@ if ($fetch_info['kyc_status'] != "completed")
                                 <ol class="breadcrumb m-0 p-0">
                                     <li class="breadcrumb-item"><h4><a href="dashboard.php">Dashboard</a></h4>
                                     </li>
-                                    
+
                                 </ol>
                             </nav>
                         </div>
@@ -259,9 +260,9 @@ if ($fetch_info['kyc_status'] != "completed")
             </div>
 
             <div class="container-fluid">
-              
+
                 <!-- Start First Cards -->
-                
+
                 <div class="card-group">
                     <div class="card border-right">
                         <div class="card-body">
@@ -303,7 +304,7 @@ if ($fetch_info['kyc_status'] != "completed")
                                 <div>
                                     <div class="d-inline-flex align-items-center">
                                         <h2 class="text-dark mb-1 font-weight-medium">5</h2>
-              
+
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">No. of Outard Transactions</h6>
                                 </div>
@@ -329,9 +330,9 @@ if ($fetch_info['kyc_status'] != "completed")
                     </div>
     </div>
     <br>
-                
+
                 <!-- End First Cards -->
-                
+
                 <!-- Start Sales Charts Section -->
                 <div class="row">
                 <div class="col-md-12 col-lg-4">
@@ -401,8 +402,8 @@ if ($fetch_info['kyc_status'] != "completed")
                             </div>
                         </div>
                     </div>
-                
-                
+
+
                 <div class="col-md-12 col-lg-8">
                     <div class="card">
                        <div class="card-body">
@@ -447,13 +448,13 @@ if ($fetch_info['kyc_status'] != "completed")
                     </div>
                 </div>
                 </div>
-            
-              
+
+
                 </div>
             </div>
-              
 
-           
+
+
             <!-- End Container fluid  -->
             <!-- footer -->
             <footer class="footer text-center text-muted">
