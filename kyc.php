@@ -377,146 +377,176 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="tab-pane " id="corporate">
+                                            <div class="col-md-12 col-lg-9">
+                                                <div class="form-group">
+                                                    <label class="text-dark">Company Name (please provide the company
+                                                        for account
+                                                        withdrawal)</label>
+                                                    <input class="form-control" type="text" name="Fullname1"
+                                                           placeholder="Enter company Chinese Name (if any)" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="text-dark">Company Name (English)</label>
+                                                    <input class="form-control" type="text" name="Fullname2"
+                                                           placeholder="Enter company English Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="text-dark">Company Registration No.</label>
+                                                    <input class="form-control" type="text" name="Fullname1"
+                                                           placeholder="Enter company registration number " required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="text-dark">Company Certificate</label>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input"
+                                                                   name="CompanyCertificate"
+                                                                   id="inputGroupFile01">
+                                                            <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                                file</label>&nbsp&nbsp
+                                                        </div>
+                                                        &nbsp&nbsp
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-secondary" type="button">
+                                                                Upload
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <hr>
+                                                    <br>
+                                                    <div class="form-group">
+
+
+                                                        <label class="text-dark">Director's Full Name (as per
+                                                            Passport)</label>
+                                                        <input class="form-control" type="text" name="Fullname1"
+                                                               placeholder="Enter English Name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-dark">Director's Full Name (as per
+                                                            IC)</label>
+                                                        <input class="form-control" type="text" name="Fullname2"
+                                                               placeholder="Enter Chinese Name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-dark">Director's Passport No.</label>
+                                                        <input class="form-control" type="text" name="Fullname1"
+                                                               placeholder="Enter Passport No." required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="text-dark">Director's IC No.</label>
+                                                        <input class="form-control" type="text" name="Fullname1"
+                                                               placeholder="Enter IC. No."
+                                                               required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="text-dark">Director's Passport Photo</label>
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input"
+                                                                       name="Passport1"
+                                                                       id="inputGroupFile01" required>
+                                                                <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                                    file</label>&nbsp&nbsp
+                                                            </div>
+                                                            &nbsp&nbsp
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-secondary" type="button">
+                                                                    Upload
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input"
+                                                                       name="Passport2"
+                                                                       id="inputGroupFile01" required>
+                                                                <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                                    file</label>&nbsp&nbsp
+                                                            </div>
+                                                            &nbsp&nbsp
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-secondary" type="button">
+                                                                    Upload
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="text-dark">Director's IC Photo</label>
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="IC1"
+                                                                       id="inputGroupFile01"
+                                                                       required>
+                                                                <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                                    file</label>&nbsp&nbsp
+                                                            </div>
+                                                            &nbsp&nbsp
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-secondary" type="button">
+                                                                    Upload
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="IC2"
+                                                                       id="inputGroupFile01"
+                                                                       required>
+                                                                <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                                    file</label>&nbsp&nbsp
+                                                            </div>
+                                                            &nbsp&nbsp
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-secondary" type="button">
+                                                                    Upload
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="IC3"
+                                                                       id="inputGroupFile01"
+                                                                       required>
+                                                                <label class="custom-file-label" for="inputGroupFile04">Choose
+                                                                    file</label>&nbsp&nbsp
+                                                            </div>
+                                                            &nbsp&nbsp
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-outline-secondary" type="button">
+                                                                    Upload
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="col-lg-12 text-center mt-2">
+                                                            <input class="btn btn-block btn-dark" type="submit"
+                                                                   name="submit_kyc"
+                                                                   value="Submit">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
-                    </div>
-                </div>
-
-                <div class="tab-pane " id="corporate">
-                    <div class="col-md-12 col-lg-9">
-                        <div class="form-group">
-                            <label class="text-dark">Company Name (please provide the company for account
-                                withdrawal)</label>
-                            <input class="form-control" type="text" name="Fullname1"
-                                   placeholder="Enter company Chinese Name (if any)" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-dark">Company Name (English)</label>
-                            <input class="form-control" type="text" name="Fullname2"
-                                   placeholder="Enter company English Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-dark">Company Registration No.</label>
-                            <input class="form-control" type="text" name="Fullname1"
-                                   placeholder="Enter company registration number " required>
-                        </div>
-                        <div class="form-group">
-                            <label class="text-dark">Company Certificate</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="CompanyCertificate"
-                                           id="inputGroupFile01">
-                                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                                </div>
-                                &nbsp&nbsp
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">Upload</button>
-                                </div>
-                            </div>
-                            <br>
-                            <hr>
-                            <br>
-                            <div class="form-group">
-
-
-                                <label class="text-dark">Director's Full Name (as per Passport)</label>
-                                <input class="form-control" type="text" name="Fullname1"
-                                       placeholder="Enter English Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="text-dark">Director's Full Name (as per IC)</label>
-                                <input class="form-control" type="text" name="Fullname2"
-                                       placeholder="Enter Chinese Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="text-dark">Director's Passport No.</label>
-                                <input class="form-control" type="text" name="Fullname1"
-                                       placeholder="Enter Passport No." required>
-                            </div>
-                            <div class="form-group">
-                                <label class="text-dark">Director's IC No.</label>
-                                <input class="form-control" type="text" name="Fullname1" placeholder="Enter IC. No."
-                                       required>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="text-dark">Director's Passport Photo</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="Passport1"
-                                               id="inputGroupFile01" required>
-                                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                                    </div>
-                                    &nbsp&nbsp
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Upload</button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="Passport2"
-                                               id="inputGroupFile01" required>
-                                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                                    </div>
-                                    &nbsp&nbsp
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Upload</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="text-dark">Director's IC Photo</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="IC1" id="inputGroupFile01"
-                                               required>
-                                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                                    </div>
-                                    &nbsp&nbsp
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Upload</button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="IC2" id="inputGroupFile01"
-                                               required>
-                                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                                    </div>
-                                    &nbsp&nbsp
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Upload</button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="IC3" id="inputGroupFile01"
-                                               required>
-                                        <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                                    </div>
-                                    &nbsp&nbsp
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Upload</button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col-lg-12 text-center mt-2">
-                                    <input class="btn btn-block btn-dark" type="submit" name="submit_kyc"
-                                           value="Submit">
-                                </div>
-                            </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- forms--->
-    </form>
 </div>
 </div>
 <div class="col-md-12 col-lg-1"></div>
