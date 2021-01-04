@@ -87,7 +87,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $fetch_pass)) {
             $_SESSION['email'] = $email;
             $status = $fetch['status'];
-            if ($status == 'verified') {
+            if ($status === 'verified') {
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $password;
                 header('location: index.php');
@@ -110,7 +110,7 @@ if (isset($_POST['check-email'])) {
     $check_email = "SELECT * FROM users WHERE email='$email'";
     $run_sql = mysqli_query($con, $check_email);
     if (mysqli_num_rows($run_sql) > 0) {
-        $code = rand(999999, 111111);
+        $code = rand(111111, 999999);
         $insert_code = "UPDATE users SET code = $code WHERE email = '$email'";
         $run_query = mysqli_query($con, $insert_code);
         if ($run_query) {
@@ -174,6 +174,38 @@ if (isset($_POST['change-password'])) {
             $errors['db-error'] = "Failed to change your password!";
         }
     }
+}
+
+if (isset($_POST['kyc-individual'])) {
+    $nameEn = mysqli_real_escape_string($con, $_POST['nameEn']);
+    $nameCn = mysqli_real_escape_string($con, $_POST['nameCn']);
+    $passportNo = mysqli_real_escape_string($con, $_POST['passportNumber']);
+    $ICNo = mysqli_real_escape_string($con, $_POST['ICNumber']);
+    $ICPhotoIds = mysqli_real_escape_string($con, $_POST['input-IC-photo-ids']);
+    $passportPhotoIds = mysqli_real_escape_string($con, $_POST['input-passport-photo-ids']);
+
+    $email = $_SESSION['email'];
+    $sql = "SELECT * FROM users WHERE email = '{$email}'";
+    $userRows = mysqli_query($con, $sql);
+    if (mysqli_num_rows($userRows) > 0) {
+        $row = mysqli_fetch_assoc($userRows);
+        $sql = <<<EOF
+INSERT INTO user_profiles(user_id, english_name, chinese_name, passport_number, IC_number, IC_photo_storage_ids, passport_photo_storage_ids)
+VALUES({$row['id']}, "{$nameEn}", "{$nameCn}", "{$passportNo}", "{$ICNo}", "{$ICPhotoIds}", "{$passportPhotoIds}")
+EOF;
+        $result = mysqli_query($con, $sql);
+        if ($result) {
+            header('Location: kyc.php');
+            exit();
+        }
+    }
+}
+
+if (isset($_POST['kyc-corporate'])) {
+    $nameEn = $_POST['nameEn'];
+    $nameCn = $_POST['nameCn'];
+    $passportNo = $_POST['passportNumber'];
+    $ICNo = $_POST['ICNumber'];
 }
 
 //if login now button click

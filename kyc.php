@@ -27,7 +27,6 @@ if ($email && $password) {
 }
 if ($fetch_info['kyc_status'] === "completed") {
     header('Location: dashboard.php');
-
 }
 ?>
 
@@ -96,7 +95,13 @@ if ($fetch_info['kyc_status'] === "completed") {
     <script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <style>
+        .passport-photo-container, .IC-photo-container {
+            background-color: #f7f7f7;
+            border: 1px solid #333;
+        }
 
+    </style>
 </head>
 
 <body>
@@ -260,8 +265,8 @@ if ($fetch_info['kyc_status'] === "completed") {
                     </li>
 
                     <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="ticket.php"
-                                                aria-expanded="false"><i class="fas fa-ticket-alt"></i></i><span
-                                    class="hide-menu">Submit Ticket</span></a></li>
+		    aria-expanded="false"><i class="fas fa-ticket-alt"></i></i><span
+		    class="hide-menu">Submit Ticket</span></a></li>
             </nav>
             <!-- End Sidebar navigation -->
         </div>
@@ -334,22 +339,22 @@ if ($fetch_info['kyc_status'] === "completed") {
                                             <div class="col-md-12 col-lg-9">
                                                 <div class="form-group">
                                                     <label class="text-dark">Full Name (as per Passport)</label>
-                                                    <input class="form-control" type="text" name="Fullname1"
+                                                    <input class="form-control" type="text" name="nameEn"
                                                            placeholder="Enter English Name" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="text-dark">Full Name (as per IC)</label>
-                                                    <input class="form-control" type="text" name="Fullname2"
+                                                    <input class="form-control" type="text" name="nameCn"
                                                            placeholder="Enter Chinese Name" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="text-dark">Passport No.</label>
-                                                    <input class="form-control" type="text" name="Fullname1"
+                                                    <input class="form-control" type="text" name="passportNumber"
                                                            placeholder="Enter Passport No." required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="text-dark">IC No.</label>
-                                                    <input class="form-control" type="text" name="Fullname1"
+                                                    <input class="form-control" type="text" name="ICNumber"
                                                            placeholder="Enter IC. No." required>
                                                 </div>
 
@@ -360,7 +365,7 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                                type="file" accept="image/*" multiple>
                                                     </div>
                                                 </div>
-
+                                                <input name="input-passport-photo-ids" type="text" hidden />
                                                 <div class="form-group">
                                                     <label class="text-dark">IC Photo</label>
                                                     <div class="IC-photo-container">
@@ -368,9 +373,10 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                                accept="image/*" multiple>
                                                     </div>
                                                 </div>
+                                                <input name="input-IC-photo-ids" type="text" hidden />
                                                 <div class="col-lg-12 text-center mt-2">
                                                     <input class="btn btn-block btn-dark" type="submit"
-                                                           name="submit_kyc"
+                                                           name="kyc-individual"
                                                            value="Submit">
                                                 </div>
                                             </div>
@@ -529,7 +535,7 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                         <br>
                                                         <div class="col-lg-12 text-center mt-2">
                                                             <input class="btn btn-block btn-dark" type="submit"
-                                                                   name="submit_kyc"
+                                                                   name="kyc-corporate"
                                                                    value="Submit">
                                                         </div>
                                                     </div>
@@ -584,8 +590,26 @@ if ($fetch_info['kyc_status'] === "completed") {
             maxFileCount: 5,
             browseOnZoneClick: true,
             initialPreviewAsData: true,
+            showUploadStats: false,
+            showUpload: false,
+            showBrowse: false,
+            showCaption: false,
+            showCancel: false,
+            showClose: false,
+            showRemove: false
         }).on("filebatchselected", function (event, files) {
             $passportEL.fileinput("upload");
+        }).on('fileuploaded', function(event, data) {
+            let res = data.response
+            let ids = $('input[name="input-passport-photo-ids"]').val()
+	    ids += ''
+            if (ids) {
+		ids = ids.split(',')
+                ids.push(res.initialPreviewConfig[0].key)
+            } else {
+                ids = [res.initialPreviewConfig[0].key]
+            }
+            $('input[name="input-passport-photo-ids"]').val(ids.join(','))
         });
 
         const $ICEL = $("#input-IC-photo");
@@ -601,8 +625,26 @@ if ($fetch_info['kyc_status'] === "completed") {
             maxFileCount: 5,
             browseOnZoneClick: true,
             initialPreviewAsData: true,
+            showUploadStats: false,
+            showUpload: false,
+            showBrowse: false,
+            showCaption: false,
+            showCancel: false,
+            showClose: false,
+            showRemove: false
         }).on("filebatchselected", function (event, files) {
             $ICEL.fileinput("upload");
+        }).on('fileuploaded', function(event, data) {
+            let res = data.response
+            let ids = $('input[name="input-IC-photo-ids"]').val()
+	    ids = ids + ''
+            if (ids) {
+		ids = ids.split(',')
+                ids.push(res.initialPreviewConfig[0].key)
+            } else {
+                ids = [res.initialPreviewConfig[0].key]
+            }
+            $('input[name="input-IC-photo-ids"]').val(ids.join(','))
         });
     });
 </script>
