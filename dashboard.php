@@ -407,43 +407,43 @@ if ($fetch_info['kyc_status'] !== "completed") {
                 <div class="col-md-12 col-lg-8">
                     <div class="card">
                        <div class="card-body">
-                       <h4 class="card-title mb-4">Revenue Details</h4>
-                       <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="bg-primary text-white">
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Country</th>
-                                                <th>Account No.</th>
-                                                <th>Cum. Amount</th>
-                                                <th>Balance</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Singapore</td>
-                                                <td>212xxx3133</td>
-                                                <td>$1,895.23</td>
-                                                <td>$421.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Malaysia</td>
-                                                <td>212xxx3142</td>
-                                                <td>$391,212.00</td>
-                                                <td>$121,212.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Thailand</td>
-                                                <td>212xxx5323</td>
-                                                <td>$391,212.00</td>
-                                                <td>$121,212.00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                           <h4 class="card-title mb-4">Revenue Details</h4>
+                           <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Country</th>
+                                            <th>Account No.</th>
+                                            <th>Cum. Amount</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Singapore</td>
+                                            <td>212xxx3133</td>
+                                            <td>$1,895.23</td>
+                                            <td>$421.54</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Malaysia</td>
+                                            <td>212xxx3142</td>
+                                            <td>$391,212.00</td>
+                                            <td>$121,212.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Thailand</td>
+                                            <td>212xxx5323</td>
+                                            <td>$391,212.00</td>
+                                            <td>$121,212.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                        </div>
                     </div>
                 </div>
