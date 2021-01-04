@@ -1,5 +1,7 @@
 <?php
 
+require_once("dotenv.php");
+
 header('Content-Type: application/json'); // set json response headers
 
 $outData = upload(); // a function to upload the bootstrap-fileinput files
@@ -16,7 +18,7 @@ function upload()
         return [];
     }
 
-    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+    $baseURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . getenv('BASE_DOMAIN');
 
     $total = count($_FILES[$input]['name']);
     $path = __DIR__ . '/storage/';
@@ -27,7 +29,7 @@ function upload()
 
         if ($tmpFilePath) {
             $newFilePath = $path . $fileName;
-            $newFileUrl = $url . '/storage/' . $fileName;
+            $newFileUrl = $baseURL . '/storage/' . $fileName;
 
             if (move_uploaded_file($tmpFilePath, $newFilePath)) {
                 $fileId = $fileName.$i; // some unique key to identify the file
@@ -37,7 +39,7 @@ function upload()
                     'caption' => $fileName,
                     'size' => $fileSize,
                     'downloadUrl' => $newFileUrl, // the url to download the file
-                    'url' => $url . '/filedelete.php', // server api to delete the file based on key
+                    'url' => $baseURL . '/filedelete.php', // server api to delete the file based on key
                 ];
             } else {
                 $errors[] = $fileName;
