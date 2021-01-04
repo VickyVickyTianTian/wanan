@@ -22,9 +22,10 @@ function upload()
 
     $total = count($_FILES[$input]['name']);
 
-    // make sure the directory `storage/[YYYY-mm-dd]` exists
-    $path = __DIR__ . '/storage/' . date('Y-m-d');
-    if (!mkdir($path) && !is_dir($path)) {
+    // make sure the directory `storage/[YYYYmmdd]` exists
+    $path = 'storage/' . date('Ymd');
+    $localPath = __DIR__ . '/' . $path;
+    if (!mkdir($localPath) && !is_dir($localPath)) {
         return ['error' => 'Oh snap! We could not upload the file now. Please try again later.'];
     }
 
@@ -43,8 +44,8 @@ function upload()
         $fileName = md5($oldFileName . microtime(true)) . '.' . $ext;
 
         if ($tmpFilePath) {
-            $newFilePath = $path . '/' . $fileName;
-            $newFileUrl = $baseURL . '/storage/' . $fileName;
+            $newFilePath = $localPath . '/' . $fileName;
+            $newFileUrl = $baseURL . '/' . $path . '/' . $fileName;
 
             if (move_uploaded_file($tmpFilePath, $newFilePath)) {
                 $fileId = $fileName.$i; // some unique key to identify the file
