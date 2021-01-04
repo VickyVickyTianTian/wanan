@@ -19,9 +19,12 @@ $baseURL = getenv('BASE_DOMAIN');
 $total = count($_FILES[$input]['name']);
 
 // make sure the directory `storage/[YYYYmmdd]` exists
+
 $path = 'storage/'.date('Ymd');
-$localPath = __DIR__.'/'.$path;
-if (!mkdir($localPath) && !is_dir($localPath)) {
+
+$fullPath = __DIR__ . '/' . $path;
+
+if (!mkdir($fullPath) && !is_dir($fullPath)) {
     exit(json_encode(['error' => 'Oh snap! We could not upload the file now. Please try again later.']));
 }
 
@@ -40,11 +43,11 @@ for ($i = 0; $i < $total; $i++) {
     $fileName = md5($oldFileName.microtime(true)).'.'.$ext;
 
     if ($tmpFilePath) {
-        $newFilePath = $localPath.'/'.$fileName;
-        $newFileUrl = $baseURL.'/'.$path.'/'.$fileName;
+        $newFilePath = $fullPath. '/' .$fileName;
+        $newFileUrl = $baseURL. '/' . $path . '/' . $fileName;
 
         if (move_uploaded_file($tmpFilePath, $newFilePath)) {
-            $sql = "INSERT INTO storage(path) VALUES('{$newFilePath}')";
+            $sql = "INSERT INTO storage(path) VALUES('{$path}/{$fileName}')";
             $res = mysqli_query($con, $sql);
             if (!$res) {
                 exit(json_encode(['error' => 'Oh snap! We could not upload the file now. Please try again later.']));
