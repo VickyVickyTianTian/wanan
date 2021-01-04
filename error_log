@@ -1,0 +1,241 @@
+[03-Jan-2021 17:01:22 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 7
+[03-Jan-2021 17:01:22 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[03-Jan-2021 17:01:22 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 27
+[03-Jan-2021 17:01:22 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 119
+[03-Jan-2021 17:01:22 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 151
+[03-Jan-2021 18:11:22 America/New_York] PHP Parse error:  syntax error, unexpected '>', expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 156
+[03-Jan-2021 18:11:24 America/New_York] PHP Parse error:  syntax error, unexpected '>', expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 156
+[03-Jan-2021 18:16:22 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Symfony\Component\Dotenv\Dotenv' not found in /home/mywarbor/wanan.app/wanan/dotenv.php:5
+Stack trace:
+#0 /home/mywarbor/wanan.app/wanan/kyc.php(6): require_once()
+#1 {main}
+  thrown in /home/mywarbor/wanan.app/wanan/dotenv.php on line 5
+[03-Jan-2021 18:16:24 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Symfony\Component\Dotenv\Dotenv' not found in /home/mywarbor/wanan.app/wanan/dotenv.php:5
+Stack trace:
+#0 /home/mywarbor/wanan.app/wanan/kyc.php(6): require_once()
+#1 {main}
+  thrown in /home/mywarbor/wanan.app/wanan/dotenv.php on line 5
+[03-Jan-2021 18:23:39 America/New_York] PHP Warning:  require_once(/home/mywarbor/wanan.app/wananautoload.php): failed to open stream: No such file or directory in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:39 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/mywarbor/wanan.app/wananautoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:52 America/New_York] PHP Warning:  require_once(/home/mywarbor/wanan.app/wananautoload.php): failed to open stream: No such file or directory in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:52 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/mywarbor/wanan.app/wananautoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:54 America/New_York] PHP Warning:  require_once(/home/mywarbor/wanan.app/wananautoload.php): failed to open stream: No such file or directory in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:54 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/mywarbor/wanan.app/wananautoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:57 America/New_York] PHP Warning:  require_once(/home/mywarbor/wanan.app/wananautoload.php): failed to open stream: No such file or directory in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:23:57 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/mywarbor/wanan.app/wananautoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:24:17 America/New_York] PHP Warning:  require_once(/home/mywarbor/wanan.app/wanan/autoload.php): failed to open stream: No such file or directory in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:24:17 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/mywarbor/wanan.app/wanan/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:24:27 America/New_York] PHP Warning:  require_once(/home/mywarbor/wanan.app/wanan/autoload.php): failed to open stream: No such file or directory in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 18:24:27 America/New_York] PHP Fatal error:  require_once(): Failed opening required '/home/mywarbor/wanan.app/wanan/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/mywarbor/wanan.app/wanan/dotenv.php on line 3
+[03-Jan-2021 19:03:51 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[03-Jan-2021 19:03:51 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 9
+[03-Jan-2021 19:03:51 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 19:03:51 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 19:03:51 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 19:39:48 America/New_York] PHP Warning:  move_uploaded_file(/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png): failed to open stream: Permission denied in /home/mywarbor/wanan.app/wanan/fileupload.php on line 32
+[03-Jan-2021 19:39:48 America/New_York] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpC2p2sx' to '/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png' in /home/mywarbor/wanan.app/wanan/fileupload.php on line 32
+[03-Jan-2021 19:43:08 America/New_York] PHP Warning:  move_uploaded_file(/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png): failed to open stream: Permission denied in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 19:43:08 America/New_York] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phplb5ClH' to '/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png' in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 19:49:50 America/New_York] PHP Warning:  move_uploaded_file(/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png): failed to open stream: Permission denied in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 19:49:50 America/New_York] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpHoTsve' to '/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png' in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 20:15:11 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:15:11 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/mywarbor/wanan.app/wanan/kyc.php on line 12
+[03-Jan-2021 20:15:11 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 20:15:11 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 20:15:11 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 20:15:22 America/New_York] PHP Warning:  move_uploaded_file(/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png): failed to open stream: Permission denied in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 20:15:22 America/New_York] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpp2e6tc' to '/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png' in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 20:16:04 America/New_York] PHP Warning:  move_uploaded_file(/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png): failed to open stream: Permission denied in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 20:16:04 America/New_York] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpt9tyvJ' to '/home/mywarbor/wanan.app/wanan/storage/Screen Shot 2020-10-27 at 4.48.35 PM.png' in /home/mywarbor/wanan.app/wanan/fileupload.php on line 34
+[03-Jan-2021 20:18:29 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:18:29 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/mywarbor/wanan.app/wanan/kyc.php on line 12
+[03-Jan-2021 20:18:29 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 20:18:29 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 20:18:29 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 20:19:41 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:19:41 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/mywarbor/wanan.app/wanan/kyc.php on line 12
+[03-Jan-2021 20:19:41 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 20:19:41 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 20:19:41 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 20:23:17 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:23:17 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[03-Jan-2021 20:23:17 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 9
+[03-Jan-2021 20:23:17 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 20:23:17 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 20:23:17 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 20:23:17 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:23:19 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:33:13 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:33:13 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/mywarbor/wanan.app/wanan/kyc.php on line 12
+[03-Jan-2021 20:33:13 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 20:33:13 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 20:33:13 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 20:42:55 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'mywarbor_team'@'localhost' (using password: NO) in /home/mywarbor/wanan.app/wanan/connection.php on line 10
+[03-Jan-2021 20:42:55 America/New_York] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/mywarbor/wanan.app/wanan/kyc.php on line 12
+[03-Jan-2021 20:42:55 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[03-Jan-2021 20:42:55 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 157
+[03-Jan-2021 20:42:55 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 184
+[03-Jan-2021 20:51:08 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 27
+[03-Jan-2021 20:58:13 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:13:52 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:14:33 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:15:58 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:20:29 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:23:39 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:25:03 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:31:30 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:33:02 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:34:22 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:37:06 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:40:56 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:43:55 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:46:30 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 28
+[03-Jan-2021 21:58:36 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 24
+[03-Jan-2021 21:58:59 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 24
+[03-Jan-2021 22:09:38 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 27
+[03-Jan-2021 22:14:20 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 27
+[03-Jan-2021 22:22:33 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 22:22:58 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 22:24:53 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 22:45:57 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 22:51:01 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 22:51:06 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 22:51:18 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:01:41 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:01:52 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:01:55 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:06:57 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:07:05 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:12:13 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:12:14 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:34:12 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:34:17 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[03-Jan-2021 23:35:20 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:34:06 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:36:48 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:53:29 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[04-Jan-2021 00:53:29 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 9
+[04-Jan-2021 00:53:29 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[04-Jan-2021 00:53:29 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 160
+[04-Jan-2021 00:53:29 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 187
+[04-Jan-2021 00:53:51 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:55:44 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:56:31 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:57:33 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:58:55 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 00:58:56 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:13:09 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:13:23 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:13:36 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:14:15 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:14:53 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:15:37 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:16:09 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:17:38 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:41:05 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:41:21 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:52:33 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:52:38 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:56:37 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:56:50 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 01:56:58 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:00:44 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:00:49 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:00:52 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:00:57 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:51:54 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[04-Jan-2021 02:51:54 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 9
+[04-Jan-2021 02:51:54 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[04-Jan-2021 02:51:54 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 165
+[04-Jan-2021 02:51:54 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 192
+[04-Jan-2021 02:52:34 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:52:39 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:54:53 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:54:56 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:58:31 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:58:37 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:58:37 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 02:58:42 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:01:05 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:01:45 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:05:03 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:05:32 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:05:59 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:08:30 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:09:11 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:09:25 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:11:04 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:11:15 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:13:03 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:13:11 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:14:48 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:14:54 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:23:36 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:23:41 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:24:20 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:33:34 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:33:36 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:33:42 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:33:48 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:47:01 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/index.php on line 8
+[04-Jan-2021 03:47:01 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/index.php on line 9
+[04-Jan-2021 03:47:01 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 28
+[04-Jan-2021 03:47:01 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 118
+[04-Jan-2021 03:47:01 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 149
+[04-Jan-2021 03:51:14 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:51:23 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:51:36 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:51:40 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:51:49 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 03:51:58 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 04:06:35 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[04-Jan-2021 04:06:35 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 9
+[04-Jan-2021 04:06:35 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[04-Jan-2021 04:06:35 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 166
+[04-Jan-2021 04:06:35 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 193
+[04-Jan-2021 04:07:07 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/index.php on line 8
+[04-Jan-2021 04:07:07 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/index.php on line 9
+[04-Jan-2021 04:07:07 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 28
+[04-Jan-2021 04:07:07 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 118
+[04-Jan-2021 04:07:07 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 149
+[04-Jan-2021 04:07:28 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 05:23:18 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:23:22 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:24:33 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:24:35 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:26:34 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:26:47 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:38:31 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:38:32 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:43:02 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:58:01 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:58:03 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 05:58:04 America/New_York] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home/mywarbor/wanan.app/wanan/kyc.php on line 10
+[04-Jan-2021 06:01:40 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/kyc.php on line 8
+[04-Jan-2021 06:01:40 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/kyc.php on line 9
+[04-Jan-2021 06:01:40 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 28
+[04-Jan-2021 06:01:40 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 160
+[04-Jan-2021 06:01:40 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/kyc.php on line 187
+[04-Jan-2021 06:17:44 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 06:17:48 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 06:17:52 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 06:18:03 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 06:18:16 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 06:20:46 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 06:20:50 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 07:37:39 America/New_York] PHP Notice:  Undefined index: email in /home/mywarbor/wanan.app/wanan/index.php on line 5
+[04-Jan-2021 07:37:39 America/New_York] PHP Notice:  Undefined index: password in /home/mywarbor/wanan.app/wanan/index.php on line 6
+[04-Jan-2021 07:37:39 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 25
+[04-Jan-2021 07:37:39 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 118
+[04-Jan-2021 07:37:39 America/New_York] PHP Notice:  Undefined variable: fetch_info in /home/mywarbor/wanan.app/wanan/index.php on line 149
+[04-Jan-2021 07:56:52 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 07:56:58 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 07:57:28 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 07:57:32 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 07:57:42 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 08:05:53 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 08:05:54 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 08:06:02 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 08:06:02 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 08:36:50 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
+[04-Jan-2021 08:36:51 America/New_York] PHP Warning:  mkdir(): File exists in /home/mywarbor/wanan.app/wanan/fileupload.php on line 29
