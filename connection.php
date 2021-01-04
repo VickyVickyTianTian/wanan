@@ -4,7 +4,7 @@ require_once("dotenv.php");
 
 $servername = getenv('DB_HOST');
 $username = getenv('DB_USER');
-$password = getenv("DB_PASSWORd");
+$password = getenv("DB_PASSWORD");
 $dbname = getenv('DB_NAME');
 
 $con = new mysqli($servername, $username, $password, $dbname);
