@@ -377,9 +377,6 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
