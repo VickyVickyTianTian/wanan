@@ -347,49 +347,19 @@ if ($fetch_info['kyc_status'] === "completed") {
 
         <div class="form-group">
            <label class="text-dark">Passport Photo</label>
-            <div class="file-loading">
+            <div class="passport-photo-container">
                 <input id="input-passport-photo" name="file-upload[]" type="file" accept="image/*" multiple>
             </div>
         </div>
 
         <div class="form-group">
            <label class="text-dark">IC Photo</label>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC1" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
+                <div class="IC-photo-container">
+                    <input id="input-IC-photo" name="file-upload[]" type="file" accept="image/*" multiple>
                 </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC2" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-            <br>
-            <div class="input-group">
-                <div class="custom-file">
-                     <input type="file" class="custom-file-input" name="IC3" id="inputGroupFile01" required>
-                     <label class="custom-file-label" for="inputGroupFile04">Choose file</label>&nbsp&nbsp
-                </div>&nbsp&nbsp
-                <div  class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="button">Upload</button>
-                </div>
-            </div>
-<br>
-            <div class="col-lg-12 text-center mt-2">
-                <input class="btn btn-block btn-dark" type="submit" name="submit_kyc" value="Submit">
-            </div>
         </div>
     </form>
-        </div>
+                        </div>
                     </div>
 
                                     <div class="tab-pane " id="corporate">
@@ -535,6 +505,23 @@ if ($fetch_info['kyc_status'] === "completed") {
             const baseURL = "<?=getenv('BASE_DOMAIN')?>"
             const $passportEL = $("#input-passport-photo");
             $passportEL.fileinput({
+                theme: 'fa',
+                allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
+                uploadUrl: baseURL + "/fileupload.php",
+                uploadAsync: true,
+                deleteUrl: baseURL + "/filedelete.php",
+                showUpload: false, // hide upload button
+                overwriteInitial: false, // append files to initial preview
+                minFileCount: 1,
+                maxFileCount: 5,
+                browseOnZoneClick: true,
+                initialPreviewAsData: true,
+            }).on("filebatchselected", function(event, files) {
+                $passportEL.fileinput("upload");
+            });
+
+            const $ICEL = $("#input-IC-photo");
+            $ICEL.fileinput({
                 theme: 'fa',
                 allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
                 uploadUrl: baseURL + "/fileupload.php",
