@@ -301,36 +301,38 @@ if ($fetch_info['kyc_status'] === "completed") {
                             <p>KYC verification is expected to be completed within 1 to 2 working days. Please check
                                 your status timely.</p>
                         </div>
-                        <div class="col-md-12 col-lg-12">
-                            <div class="card-body">
-                                <ul class="nav nav-pills bg-nav-pills nav-justified mb-2">
-                                    <li class="nav-item">
-                                        <a href="#individual" data-toggle="tab" aria-expanded="false"
-                                           class="nav-link rounded-0 active">
-                                            <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">Individual</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#corporate" data-toggle="tab" aria-expanded="true"
-                                           class="nav-link rounded-0">
-                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">Corporate</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" data-toggle="tab" aria-expanded="true"
-                                           class="nav-link rounded-0">
-                                            <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <br>
 
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="individual">
-                                        <form action="kyc.php" method="POST" name="kyc-individual" autocomplete="">
+                        <form action="kyc.php" method="POST" name="kyc-individual" autocomplete="">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="card-body">
+                                    <ul class="nav nav-pills bg-nav-pills nav-justified mb-2">
+
+                                        <li class="nav-item">
+                                            <a href="#individual" data-toggle="tab" aria-expanded="false"
+                                               class="nav-link rounded-0 active">
+                                                <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                <span class="d-none d-lg-block">Individual</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#corporate" data-toggle="tab" aria-expanded="true"
+                                               class="nav-link rounded-0">
+                                                <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                <span class="d-none d-lg-block">Corporate</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="" data-toggle="tab" aria-expanded="true"
+                                               class="nav-link rounded-0">
+                                                <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                <span class="d-none d-lg-block"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <br>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="individual">
                                             <div class="col-md-12 col-lg-9">
                                                 <div class="form-group">
                                                     <label class="text-dark">Full Name (as per Passport)</label>
@@ -374,10 +376,9 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                            value="Submit">
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <div class="tab-pane " id="corporate">
-                                        <form action="kyc.php" method="POST" name="kyc-corporate" autocomplete="">
+                                        </div>
+
+                                        <div class="tab-pane " id="corporate">
                                             <div class="col-md-12 col-lg-9">
                                                 <div class="form-group">
                                                     <label class="text-dark">Company Name (please provide the company
@@ -535,11 +536,11 @@ if ($fetch_info['kyc_status'] === "completed") {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
