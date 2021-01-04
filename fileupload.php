@@ -55,7 +55,6 @@ function upload()
                     'caption' => $oldFileName,
                     'size' => $fileSize,
                     'downloadUrl' => $newFileUrl, // the url to download the file
-                    'url' => $baseURL . '/filedelete.php', // server api to delete the file based on key
                 ];
             } else {
                 $errors[] = $oldFileName;

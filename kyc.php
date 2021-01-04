@@ -288,7 +288,6 @@ if ($fetch_info['kyc_status'] === "completed") {
             <div class="container-fluid">
                 <!-- Start Sales Charts Section -->
                 <div class="row">
-                    <div class="col-md-12 col-lg-1"></div>
                     <div class="col-md-12 col-lg-10">
                         <div class="card">
                             <div class="card-body">
@@ -328,7 +327,7 @@ if ($fetch_info['kyc_status'] === "completed") {
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="individual">
 
-        <div class="col-md-12 col-lg-8">
+        <div class="col-md-12 col-lg-9">
             <div class="form-group">
                <label class="text-dark">Full Name (as per Passport)</label>
                <input class="form-control" type="text" name="Fullname1" placeholder="Enter English Name" required >
@@ -395,7 +394,7 @@ if ($fetch_info['kyc_status'] === "completed") {
 
                                     <div class="tab-pane " id="corporate">
 
-<div class="col-md-12 col-lg-8">
+<div class="col-md-12 col-lg-9">
             <div class="form-group">
                <label class="text-dark">Company Name (please provide the company for account withdrawal)</label>
                <input class="form-control" type="text" name="Fullname1" placeholder="Enter company Chinese Name (if any)" required >
@@ -537,10 +536,9 @@ if ($fetch_info['kyc_status'] === "completed") {
             const $passportEL = $("#input-passport-photo");
             $passportEL.fileinput({
                 theme: 'fa',
-                allowedFileExtensions: ['jpg', 'png', 'gif'],
+                allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
                 uploadUrl: baseURL + "/fileupload.php",
                 uploadAsync: true,
-                deleteUrl: baseURL + "/filedelete.php",
                 showUpload: false, // hide upload button
                 overwriteInitial: false, // append files to initial preview
                 minFileCount: 1,
