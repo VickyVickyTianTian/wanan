@@ -8,9 +8,11 @@ header('Content-Type: application/json'); // set json response headers
 
 $preview = $config = $errors = [];
 
-$input = 'file-upload';
-
-if (empty($_FILES[$input])) {
+if (isset($_FILES['passport-photo'])) {
+    $input = 'passport-photo';
+} elseif ($_FILES['IC-photo']) {
+    $input = 'IC-photo';
+} else {
     exit(json_encode([]));
 }
 

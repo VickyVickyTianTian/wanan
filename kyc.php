@@ -348,14 +348,14 @@ if ($fetch_info['kyc_status'] === "completed") {
         <div class="form-group">
            <label class="text-dark">Passport Photo</label>
             <div class="passport-photo-container">
-                <input id="input-passport-photo" name="file-upload[]" type="file" accept="image/*" multiple>
+                <input id="input-passport-photo" name="passport-photo[]" type="file" accept="image/*" multiple>
             </div>
         </div>
 
         <div class="form-group">
            <label class="text-dark">IC Photo</label>
                 <div class="IC-photo-container">
-                    <input id="input-IC-photo" name="file-upload[]" type="file" accept="image/*" multiple>
+                    <input id="input-IC-photo" name="IC-photo[]" type="file" accept="image/*" multiple>
                 </div>
         </div>
     </form>
