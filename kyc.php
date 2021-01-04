@@ -2,7 +2,8 @@
 <html dir="ltr" lang="en">
 <?php
 
-require_once "controllerUserData.php";
+require_once("controllerUserData.php");
+require_once("dotenv.php");
 
 $email    = $_SESSION['email'];
 $password = $_SESSION['password'];
