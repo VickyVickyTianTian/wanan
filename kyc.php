@@ -533,12 +533,13 @@ if ($fetch_info['kyc_status'] === "completed") {
 
     <script>
         $(document).ready(function() {
+            const baseURL = "<?=getenv('BASE_DOMAIN')?>"
             const $passportEL = $("#input-passport-photo");
             $passportEL.fileinput({
                 allowedFileExtensions: ['jpg', 'png', 'gif'],
-                uploadUrl: "/fileupload.php",
+                uploadUrl: baseURL + "/fileupload.php",
                 uploadAsync: true,
-                deleteUrl: "/filedelete.php",
+                deleteUrl: baseURL + "/filedelete.php",
                 showUpload: false, // hide upload button
                 overwriteInitial: false, // append files to initial preview
                 minFileCount: 1,
